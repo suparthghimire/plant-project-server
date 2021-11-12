@@ -1,0 +1,119 @@
+swagger: "2.0"
+info:
+  title: Plant Project
+  description: API Description for Plant Catalog.
+  version: 1.0.0
+host: localhost:3000
+basePath: /
+schemes:
+  - http
+definitions:
+  Admin:
+    required:
+      - admin_full_name
+      - admin_email
+      - admin_password
+      - admin_image
+    properties:
+      id:
+        type: string
+        description: The auto-generated id of the book
+      admin_full_name:
+        type: string
+        description: Full Name of Admin
+      admin_email:
+        type: string
+        description: Email of Admin
+      admin_password:
+        type: string
+        description: Password of Admin
+      admin_image:
+        type: string
+        description: URL for Admin Profile Image
+paths:
+  /admin:
+    get:
+      tags:
+        - Admin
+      summary: Admin Dashboard.
+      description: Admin Dashboard Data
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Admin"
+  /admin/store-admin:
+    post:
+      tags:
+        - Admin
+      parameters:
+        - in: body
+          name: admin
+          description: The Admin to Create.
+          schema:
+            $ref: "#/definitions/Admin"
+      summary: New Admin
+      description: Create New Admin
+      produces:
+        - application/json
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: "#/definitions/Admin"
+  /admin/edit-admin/{id}:
+    patch:
+      tags:
+        - Admin
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Admin ID
+        - in: body
+          name: admin
+          description: The Admin to Edit.
+          schema:
+            $ref: "#/definitions/Admin"
+
+      summary: Edit Admin
+      description: Edit Existing Admin
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Admin"
+  /admin/delete-admin/{id}:
+    delete:
+      tags:
+        - Admin
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Admin ID
+        - in: body
+          name: admin
+          description: The Admin to Delete.
+          schema:
+            $ref: "#/definitions/Admin"
+
+      summary: Edit Admin
+      description: Edit Existing Admin
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Admin"

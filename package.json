@@ -6,7 +6,11 @@
     "dependencies": {
         "express": "^4.17.1"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "swagger-jsdoc": "^6.1.0",
+        "swagger-ui-express": "^4.1.6",
+        "yamljs": "^0.3.0"
+    },
     "scripts": {
         "start": "node server.js",
         "dev": "nodemon server.js"
