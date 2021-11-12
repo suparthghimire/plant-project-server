@@ -1,0 +1,25 @@
+{
+    "name": "plant-project-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/suparthghimire/plant-project-server.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/suparthghimire/plant-project-server/issues"
+    },
+    "homepage": "https://github.com/suparthghimire/plant-project-server#readme"
+}
